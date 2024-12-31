@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Travel Agency</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+
+    header {
+      background-color: #0078d7;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+    }
+
+    input, textarea, button {
+      font-size: 1rem;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    button {
+      background-color: #0078d7;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #005bb5;
+    }
+
+    .contact-info {
+      margin-top: 20px;
+    }
+
+    .contact-info p {
+      margin: 5px 0;
+    }
+
+    .map {
+      margin-top: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+  <div class="container">
+    <h2>We’d Love to Hear From You</h2>
+    <p>Have questions or want to book your next adventure? Use the form below to reach out!</p>
+
+    <form action="submit_contact.php" method="post">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <p><strong>Email:</strong> support@travelagency.com</p>
+      <p><strong>Phone:</strong> +1 234 567 8900</p>
+      <p><strong>Address:</strong> 123 Explore Lane, Wanderlust City, Dreamland</p>
+    </div>
+
+    <div class="map">
+      <h2>Our Location</h2>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093567!2d-122.42067908468258!3d37.77492977975983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858179f74a9b49%3A0x4d1e77a9b1e838c7!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1674500228306!5m2!1sen!2sin" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</body>
+</html>
