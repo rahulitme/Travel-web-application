@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Application Support</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #0073e6;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        form input, form textarea, form select, form button {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            background-color: #0073e6;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #005bb5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Travel Application Support</h1>
+            <p>Welcome to the support page for our travel application. We're here to ensure your travel experience is smooth and hassle-free.</p>
+        </section>
+
+        <section>
+            <h2>FAQs</h2>
+            <ul>
+                <li><strong>How do I book a trip?</strong> <br> Navigate to the "Book a Trip" section in the app and follow the instructions.</li>
+                <li><strong>Can I cancel my booking?</strong> <br> Yes, you can cancel your booking from the "My Trips" section. Cancellation fees may apply.</li>
+                <li><strong>How do I contact customer support?</strong> <br> Use the contact form below or email us at travel.support@example.com.</li>
+                <li><strong>What payment methods are accepted?</strong> <br> We accept major credit cards, debit cards, and digital wallets.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Contact Form</h2>
+            <form action="/submit-support-request" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="issue">Issue:</label>
+                <select id="issue" name="issue" required>
+                    <option value="booking">Booking Issue</option>
+                    <option value="cancellation">Cancellation Issue</option>
+                    <option value="payment">Payment Issue</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Travel Application Inc. All rights reserved.</p>
+    </footer>
+</body>
+</html>
