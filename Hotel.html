@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Booking</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f9fc;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #007BFF;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px;
+    }
+
+    .filters select, .filters input {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    #hotel-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .hotel-card {
+      width: 300px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hotel-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .hotel-image img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .hotel-info {
+      padding: 15px;
+    }
+
+    .hotel-info h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      color: #007BFF;
+    }
+
+    .hotel-info p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    .btn-book {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-book:hover {
+      background-color: #0056b3;
+    }
+
+    .btn-disabled {
+      background-color: #ccc;
+      color: #666;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: not-allowed;
+    }
+
+    .available {
+      color: green;
+      font-weight: bold;
+    }
+
+    .not-available {
+      color: red;
+      font-weight: bold;
+    }
+
+    .no-hotels {
+      font-size: 18px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>Hotel Booking</header>
+
+  <div class="filters">
+    <select id="location" onchange="filterByLocation(this.value)">
+      <option value="">All Locations</option>
+      <option value="Goa">Goa</option>
+      <option value="Manali">Manali</option>
+      <option value="Kerala">Kerala</option>
+      <option value="Mumbai">Mumbai</option>
+    </select>
+
+    <input type="number" id="price" placeholder="Max Price (₹)" oninput="filterByPrice(this.value)">
+  </div>
+
+  <div id="hotel-list"></div>
+
+  <script src="hotel.js"></script>
+</body>
+</html>
