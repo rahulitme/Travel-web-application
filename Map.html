@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Map Location Markers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: linear-gradient(145deg, #ffffff, #e6e6e6);
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            color: #34495e;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            background: #d6e4f7;
+        }
+
+        .world-map {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mercator_projection_SW.jpg/1920px-Mercator_projection_SW.jpg') center/cover no-repeat;
+            filter: brightness(90%);
+        }
+
+        .marker {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: #e74c3c;
+            border: 3px solid #ffffff;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(231, 76, 60, 0.4);
+        }
+
+        .marker::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .marker:hover {
+            transform: scale(1.3);
+            box-shadow: 0 8px 15px rgba(231, 76, 60, 0.6);
+        }
+
+        .marker:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .tooltip {
+            position: absolute;
+            background-color: rgba(44, 62, 80, 0.9);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform: translate(-50%, -50%) translateY(10px);
+            z-index: 1000;
+            white-space: nowrap;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .marker:hover .tooltip {
+            opacity: 1;
+            transform: translate(-50%, -50%) translateY(-10px);
+        }
+
+        .legend {
+            margin-top: 1rem;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tooltip {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Notable Global Locations</h1>
+        <div class="map-container">
+            <div class="world-map" id="map"></div>
+        </div>
+        <div class="legend">Hover over the markers to explore!</div>
+    </div>
+
+    <script>
+        const locations = [
+            { name: 'New York', lat: 40.7128, lng: -74.0060, top: 35, left: 25 },
+            { name: 'London', lat: 51.5074, lng: -0.1278, top: 30, left: 45 },
+            { name: 'Tokyo', lat: 35.6762, lng: 139.6503, top: 38, left: 82 },
+            { name: 'Sydney', lat: -33.8688, lng: 151.2093, top: 65, left: 85 },
+            { name: 'Dubai', lat: 25.2048, lng: 55.2708, top: 42, left: 62 }
+        ];
+
+        const map = document.getElementById('map');
+
+        // Create markers
+        locations.forEach(location => {
+            const marker = document.createElement('div');
+            marker.className = 'marker';
+            marker.style.top = `${location.top}%`;
+            marker.style.left = `${location.left}%`;
+
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            tooltip.textContent = location.name;
+
+            marker.appendChild(tooltip);
+
+            marker.addEventListener('mouseenter', () => {
+                tooltip.style.opacity = '1';
+                tooltip.style.transform = 'translate(-50%, -50%) translateY(-10px)';
+            });
+
+            marker.addEventListener('mouseleave', () => {
+                tooltip.style.opacity = '0';
+                tooltip.style.transform = 'translate(-50%, -50%) translateY(10px)';
+            });
+
+            map.appendChild(marker);
+        });
+    </script>
+</body>
+</html>
