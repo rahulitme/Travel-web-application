@@ -5,94 +5,104 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free Consultation Form</title>
   <style>
- body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f0f8ff;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
 
     /* Airplane animation */
-  .airplane {
-  position: absolute;
-  width: 100px;
-  height: 50px;
-  background: url('https://img.freepik.com/free-vector/airplane-cartoon-style-white-background_1308-97252.jpg?t=st=1737046563~exp=1737050163~hmac=ac18c817ff0582d9095d1693e08618b1b72d71a935a3ad97f6755b82a621e32b&w=1380') no-repeat center;
+    .airplane {
+      position: absolute;
+      width: 100px;
+      height: 50px;
+      background: url('https://img.freepik.com/free-vector/airplane-cartoon-style-white-background_1308-97252.jpg?t=st=1737046563~exp=1737050163~hmac=ac18c817ff0582d9095d1693e08618b1b72d71a935a3ad97f6755b82a621e32b&w=1380') no-repeat center;
+      background-size: contain;
+      animation: randomFlight 15s infinite ease-in-out;
+    }
 
-  background-size: contain;
-  animation: randomFlight 15s infinite ease-in-out;
-}
+    @keyframes randomFlight {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(50vw, -30vh) rotate(45deg); }
+      50% { transform: translate(-40vw, 50vh) rotate(-45deg); }
+      75% { transform: translate(30vw, -60vh) rotate(30deg); }
+      100% { transform: translate(0, 0) rotate(0deg); }
+    }
 
-@keyframes randomFlight {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate(50vw, -30vh) rotate(45deg);
-  }
-  50% {
-    transform: translate(-40vw, 50vh) rotate(-45deg);
-  }
-  75% {
-    transform: translate(30vw, -60vh) rotate(30deg);
-  }
-  100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-}
     .form-container {
-      background-color: #002a5c;
-      padding: 20px 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
       color: #fff;
       max-width: 400px;
       width: 100%;
       z-index: 10;
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .form-container h2 {
       text-align: center;
-      margin-bottom: 20px;
-      font-size: 1.5rem;
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+      color: #ffcc00;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .form-container input,
     .form-container select,
-    .form-container textarea,
-    .form-container button {
+    .form-container textarea {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
       font-size: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .form-container input::placeholder,
+    .form-container textarea::placeholder {
+      color: rgba(255, 255, 255, 0.7);
     }
 
     .form-container input:focus,
     .form-container select:focus,
     .form-container textarea:focus {
       outline: none;
-      border-color: #007bff;
+      border-color: #ffcc00;
+      background: rgba(255, 255, 255, 0.2);
     }
 
     .form-container button {
-      background-color: #ffcc00;
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      background: #ffcc00;
       color: #002a5c;
       font-weight: bold;
+      font-size: 1.1rem;
       border: none;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .form-container button:hover {
-      background-color: #e6b800;
+      background: #ffd700;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 204, 0, 0.3);
     }
   </style>
 </head>
