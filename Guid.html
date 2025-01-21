@@ -5,58 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  line-height: 1.6;
+  background: #1a237e;
+  color: #fffcfc;
+  overflow-x: hidden;
+}
 
-    .card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-      width: 300px;
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px; /* Add padding for spacing around cards */
+  background-color: #f9f9f9; /* Light background for better contrast with cards */
+  border-radius: 10px; /* Optional, for a subtle container style */
+}
 
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
-    }
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  width: 300px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
 
-    .card-content {
-      padding: 20px;
-    }
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
 
-    .card-content h3 {
-      margin-bottom: 10px;
-      color: #333;
-    }
+.card-content {
+  padding: 20px;
+}
 
-    .card-content p {
-      color: #666;
-      margin-bottom: 15px;
-    }
+.card-content h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
 
-    .card-content a {
-      text-decoration: none;
-      color: #ff9800;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
+.card-content p {
+  color: #666;
+  margin-bottom: 15px;
+}
 
-    .card-content a:hover {
-      color: #e68900;
-    }
+.card-content a {
+  text-decoration: none;
+  color: #ff9800;
+  font-weight: bold;
+  transition: color 0.3s;
+}
 
+.card-content a:hover {
+  color: #e68900;
+}
+
+    </style>
     </style>
 </head>
 <body>
