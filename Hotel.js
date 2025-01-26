@@ -1,8 +1,36 @@
 const hotels = [
-  { id: 1, name: "Sunset Paradise", location: "Goa", price: 3000, available: true },
-  { id: 2, name: "Mountain Retreat", location: "Manali", price: 5000, available: true },
-  { id: 3, name: "Beachside Bliss", location: "Kerala", price: 4000, available: false },
-  { id: 4, name: "City Comfort", location: "Mumbai", price: 2000, available: true },
+  { 
+    id: 1, 
+    name: "Sunset Paradise", 
+    location: "Goa", 
+    price: 3000, 
+    available: true,
+    imageUrl: "https://plus.unsplash.com/premium_photo-1734543932698-11eebd527d0a?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  { 
+    id: 2, 
+    name: "Mountain Retreat", 
+    location: "Manali", 
+    price: 5000, 
+    available: true,
+    imageUrl: "https://images.unsplash.com/photo-1736890729709-4443ac5b6bf0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8eEh4WVRNSExnT2N8fGVufDB8fHx8fA%3D%3D"
+  },
+  { 
+    id: 3, 
+    name: "Beachside Bliss", 
+    location: "Kerala", 
+    price: 4000, 
+    available: false,
+    imageUrl: "https://images.unsplash.com/photo-1737541332978-2e8e6b15a3cc?q=80&w=1856&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  { 
+    id: 4, 
+    name: "City Comfort", 
+    location: "Mumbai", 
+    price: 2000, 
+    available: true,
+    imageUrl: "https://plus.unsplash.com/premium_photo-1664371206027-c5accf6fffd2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDV8SnBnNktpZGwtSGt8fGVufDB8fHx8fA%3D%3D"
+  },
 ];
 
 function displayHotels(filterFn = null) {
@@ -21,7 +49,7 @@ function displayHotels(filterFn = null) {
     hotelDiv.className = "hotel-card";
     hotelDiv.innerHTML = `
       <div class="hotel-image">
-        <img src="https://source.unsplash.com/random/400x200/?hotel,${hotel.location}" alt="${hotel.name}">
+        <img src="${hotel.imageUrl}" alt="${hotel.name}">
       </div>
       <div class="hotel-info">
         <h3>${hotel.name}</h3>
